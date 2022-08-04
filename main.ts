@@ -538,15 +538,19 @@ radio.onReceivedString(function (receivedString) {
             if (true) {
                 if (receivedString == "f") {
                     wuKong.setAllMotor(motor_Power_Full_Current_Pos, motor_Power_Full_Current_Pos)
+                    roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_Full_Current_Pos, motor_Power_Full_Current_Pos)
                     led.plot(2, 0)
                 } else if (receivedString == "b") {
                     wuKong.setAllMotor(motor_Power_Full_Current_Neg, motor_Power_Full_Current_Neg)
+                    roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_Full_Current_Neg, motor_Power_Full_Current_Neg)
                     led.plot(2, 4)
                 } else if (receivedString == "l") {
                     wuKong.setAllMotor(motor_Power_Full_Current_Pos, motor_Power_Full_Current_Neg)
+                    roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_Full_Current_Pos, motor_Power_Full_Current_Neg)
                     led.plot(0, 2)
                 } else if (receivedString == "r") {
                     wuKong.setAllMotor(motor_Power_Full_Current_Neg, motor_Power_Full_Current_Pos)
+                    roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_Full_Current_Neg, motor_Power_Full_Current_Pos)
                     led.plot(4, 2)
                 } else if (receivedString == "8") {
                     led.plot(0, 0)
@@ -555,6 +559,7 @@ radio.onReceivedString(function (receivedString) {
                 } else if (receivedString == "s") {
                     _codeComment_AsText = "To complement Gear Icons"
                     wuKong.setAllMotor(motor_Power_ZERO_INT, motor_Power_ZERO_INT)
+                    roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_ZERO_INT, motor_Power_ZERO_INT)
                     led.plot(2, 2)
                     _codeComment_AsText = "During idle, show entity-type: B=Bot, C=Controller"
                     screen_IconMesssage_Fn("bot")
@@ -583,6 +588,7 @@ radio.onReceivedString(function (receivedString) {
                 } else {
                     _codeComment_AsText = "Error: Unknown Msg"
                     wuKong.setAllMotor(motor_Power_ZERO_INT, motor_Power_ZERO_INT)
+                    roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_ZERO_INT, motor_Power_ZERO_INT)
                     if (true) {
                         _codeComment_AsText = "For now, all 4 corners = Error: Unknown Msg"
                         screen_IconMesssage_Fn("error")

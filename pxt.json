@@ -9,7 +9,8 @@
         "microphone": "*",
         "motor": "github:dfrobot/pxt-motor#2cdf17586556c5a532782aa436c516ae50f5f316",
         "pxt-sonar": "github:microsoft/pxt-sonar#v0.0.5",
-        "wuKong": "github:elecfreaks/pxt-wukong#v1.4.9"
+        "wuKong": "github:elecfreaks/pxt-wukong#v1.4.9",
+        "22-0726-2140-makecode_customblock-servocontinuous-ef_wukong_pinsblue": "github:eande-jasonc1025/22-0726-2140-makecode_customblock-servocontinuous-ef_wukong_pinsblue#v0.0.2"
     },
     "files": [
         "main.blocks",
