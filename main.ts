@@ -545,12 +545,12 @@ radio.onReceivedString(function (receivedString) {
                     roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_Full_Current_Neg, motor_Power_Full_Current_Neg)
                     led.plot(2, 4)
                 } else if (receivedString == "l") {
-                    wuKong.setAllMotor(motor_Power_Full_Current_Pos, motor_Power_Full_Current_Neg)
-                    roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_Full_Current_Pos, motor_Power_Full_Current_Neg)
-                    led.plot(0, 2)
-                } else if (receivedString == "r") {
                     wuKong.setAllMotor(motor_Power_Full_Current_Neg, motor_Power_Full_Current_Pos)
                     roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_Full_Current_Neg, motor_Power_Full_Current_Pos)
+                    led.plot(0, 2)
+                } else if (receivedString == "r") {
+                    wuKong.setAllMotor(motor_Power_Full_Current_Pos, motor_Power_Full_Current_Neg)
+                    roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_Full_Current_Pos, motor_Power_Full_Current_Neg)
                     led.plot(4, 2)
                 } else if (receivedString == "8") {
                     led.plot(0, 0)
@@ -642,10 +642,10 @@ if (true) {
 basic.forever(function () {
     if (deviceType_Controller_Bool) {
         Screen_Clear_Fn()
-        if (input.buttonIsPressed(Button.AB)) {
+        if (input.isGesture(Gesture.LogoDown)) {
             radio.sendString("f")
             led.plot(2, 0)
-        } else if (input.isGesture(Gesture.ScreenDown)) {
+        } else if (input.isGesture(Gesture.LogoUp)) {
             radio.sendString("b")
             led.plot(2, 4)
         } else if (input.buttonIsPressed(Button.A)) {
