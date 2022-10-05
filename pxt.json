@@ -1,6 +1,6 @@
 {
     "name": "RQ-BX--Bot-Controller_As_Microbit-Intermediate-GroupCh_01",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "",
     "dependencies": {
         "core": "*",
