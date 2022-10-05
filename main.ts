@@ -183,7 +183,7 @@ function setup_Network_Fn () {
         if (true) {
             _codeComment_AsText = "Use Digital-Pin as a DIP Switch for Setup"
             _codeComment_AsText = "Use P16 since easiest to locate (at top) for quick change"
-            _codeComment_AsText = "For Controller-Joystick: Yahboom: Appears P16 defaults to Low when Open-Circuit"
+            _codeComment_AsText = "For Controller-Remote: Yahboom: Appears P16 defaults to Low when Open-Circuit"
             _codeComment_AsText = "Remove P16-Dependency since unreliable open-circuit value: either 0 or 1"
             if (true) {
                 network_Mode_RadioWireless_Bool = true
@@ -528,7 +528,7 @@ function Screen_Clear_Fn () {
 }
 // RQ-BX-G (Global)
 radio.onReceivedString(function (receivedString) {
-    _codeComment_AsText = "For Local-Controller-Joystick"
+    _codeComment_AsText = "For Local-Controller-Remote"
     if (network_Mode_RadioWireless_Bool && deviceType_Bot_Bool) {
         if (true) {
             if (false) {
@@ -604,7 +604,7 @@ radio.onReceivedString(function (receivedString) {
         }
     } else if (network_Mode_RadioWireless_Bool && !(deviceType_Controller_Bool) && !(deviceType_Bot_Bool)) {
         _codeComment_AsText = "Only place that activates Bot"
-        _codeComment_AsText = "Bot can only be activated by wake-up message from Controller-Joystick"
+        _codeComment_AsText = "Bot can only be activated by wake-up message from Controller-Remote"
         deviceType_Bot_Bool = true
         config_BotOnly_Setup_Fn()
     }
@@ -634,7 +634,7 @@ let network_Mode_RadioWireless_Bool = false
 let network_GroupChannel_MyBotAndController_Base0_Int = 0
 let _codeComment_AsText = ""
 if (true) {
-    _codeComment_AsText = "Set GroupChannel-# for Both Bot & Controller-Joystick."
+    _codeComment_AsText = "Set GroupChannel-# for Both Bot & Controller-Remote."
     network_GroupChannel_MyBotAndController_Base0_Int = 1
     setup_Network_Fn()
     setup_BotAndController_Fn()
