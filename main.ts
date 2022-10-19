@@ -223,21 +223,19 @@ function screen_IconMesssage_Fn (screen_IconMessage_Id_Str_In: string) {
     if (screen_IconMessage_Id_Str_In == "bot") {
         _codeComment_AsText = "B = Bot"
         if (true) {
-            led.plotBrightness(1, 0, screenBrightness_LO_INT)
-            led.plotBrightness(1, 1, screenBrightness_LO_INT)
-            led.plotBrightness(1, 2, screenBrightness_LO_INT)
-            led.plotBrightness(1, 3, screenBrightness_LO_INT)
-        }
-        if (true) {
-            led.plotBrightness(2, 3, screenBrightness_LO_INT)
+            led.plotBrightness(3, 4, screenBrightness_LO_INT)
             led.plotBrightness(3, 3, screenBrightness_LO_INT)
-        }
-        if (true) {
-            led.plotBrightness(2, 1, screenBrightness_LO_INT)
+            led.plotBrightness(3, 2, screenBrightness_LO_INT)
             led.plotBrightness(3, 1, screenBrightness_LO_INT)
         }
         if (true) {
-            led.plotBrightness(3, 2, screenBrightness_LO_INT)
+            led.plotBrightness(2, 3, screenBrightness_LO_INT)
+            led.plotBrightness(2, 1, screenBrightness_LO_INT)
+        }
+        if (true) {
+            led.plotBrightness(1, 3, screenBrightness_LO_INT)
+            led.plotBrightness(1, 2, screenBrightness_LO_INT)
+            led.plotBrightness(1, 1, screenBrightness_LO_INT)
         }
     } else if (screen_IconMessage_Id_Str_In == "controller") {
         _codeComment_AsText = "C = Controller"
@@ -539,19 +537,19 @@ radio.onReceivedString(function (receivedString) {
                 if (receivedString == "f") {
                     wuKong.setAllMotor(motor_Power_Full_Current_Pos, motor_Power_Full_Current_Pos)
                     roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_Full_Current_Pos, motor_Power_Full_Current_Pos)
-                    led.plot(2, 0)
+                    led.plot(2, 4)
                 } else if (receivedString == "b") {
                     wuKong.setAllMotor(motor_Power_Full_Current_Neg, motor_Power_Full_Current_Neg)
                     roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_Full_Current_Neg, motor_Power_Full_Current_Neg)
-                    led.plot(2, 4)
+                    led.plot(2, 0)
                 } else if (receivedString == "l") {
                     wuKong.setAllMotor(motor_Power_Full_Current_Neg, motor_Power_Full_Current_Pos)
                     roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_Full_Current_Neg, motor_Power_Full_Current_Pos)
-                    led.plot(0, 2)
+                    led.plot(4, 2)
                 } else if (receivedString == "r") {
                     wuKong.setAllMotor(motor_Power_Full_Current_Pos, motor_Power_Full_Current_Neg)
                     roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_Full_Current_Pos, motor_Power_Full_Current_Neg)
-                    led.plot(4, 2)
+                    led.plot(0, 2)
                 } else if (receivedString == "8") {
                     led.plot(0, 0)
                 } else if (receivedString == "9") {
